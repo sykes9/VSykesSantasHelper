@@ -27,7 +27,8 @@ public class ScrollingActivity extends AppCompatActivity {
     static boolean shopping = true;
     static boolean gardening = true;
     static boolean videoGames = true;
-    public static String userAge;
+    public static TextView data;
+    Button click;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,8 @@ public class ScrollingActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
 
         final Button male = (Button)findViewById(R.id.MaleBtn);
         final Button female = (Button)findViewById(R.id.FemaleBtn);
@@ -86,7 +89,6 @@ public class ScrollingActivity extends AppCompatActivity {
                 electronics = false;
             }
         });
-
 
         CheckBox artBox = (CheckBox)findViewById(R.id.checkArt);
         artBox.setOnClickListener(new View.OnClickListener() {
@@ -137,18 +139,16 @@ public class ScrollingActivity extends AppCompatActivity {
         });
 
 
-        final Button submit = (Button)findViewById(R.id.ResultBtn);
-        submit.setOnClickListener(new View.OnClickListener() {
+        click = (Button) findViewById(R.id.ResultBtn);
+        data = (TextView) findViewById(R.id.fetchdata);
+
+        click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setText();
-                startActivity(new Intent(ScrollingActivity.this, Results.class));
+                ResultsTwo process = new ResultsTwo();
+                process.execute();
             }
         });
-    }
-    public void setText() {
-        EditText age = (EditText) findViewById(R.id.ageInput);
-        userAge=age.getText().toString();
     }
 
     @Override
@@ -169,105 +169,8 @@ public class ScrollingActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-        System.out.println("Hi");
 
         return super.onOptionsItemSelected(item);
     }
 }
-//package com.example.vsykes.santashelper;
-//
-//import android.content.Intent;
-//import android.os.Bundle;
-//import android.support.design.widget.FloatingActionButton;
-//import android.support.design.widget.Snackbar;
-//import android.support.v7.app.AppCompatActivity;
-//import android.support.v7.widget.Toolbar;
-//import android.view.View;
-//import android.view.Menu;
-//import android.view.MenuItem;
-//import android.widget.Button;
-//
-//import java.util.Scanner;
-//
-//public class ScrollingActivity extends AppCompatActivity {
-//
-//    String gender;
-//
-//    public class Person {
-//
-//        boolean gender;
-//        String name;
-//        int age;
-//        int priceLow;
-//        int priceHigh;
-//
-//    }
-//
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_scrolling);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-//
-//        Button MaleBtn = (Button) findViewById(R.id.MaleBtn);
-//        MaleBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                gender = "Male";
-//            }
-//        });
-//        Button FemaleBtn = (Button) findViewById(R.id.FemaleBtn);
-//        FemaleBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                gender = "Female";
-//            }
-//        });
-//
-//        Button ResultBtn = (Button) findViewById(R.id.ResultBtn);
-//        ResultBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openResults();
-//
-//            }
-//        });
-//
-//    }
-//    public void openResults() {
-//        Intent intent = new Intent(this, Results.class);
-//        startActivity(intent);
-//    }
-//
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_scrolling, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-//}
+

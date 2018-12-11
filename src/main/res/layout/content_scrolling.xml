@@ -156,50 +156,19 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="What is your price range?"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            app:fontFamily="casual" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lowest"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            app:fontFamily="casual" />
-
-        <EditText
-            android:id="@+id/lowRange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Highest"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            app:fontFamily="casual" />
-
-        <EditText
-            android:id="@+id/highRange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
-
         <Button
             android:id="@+id/ResultBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
             android:text="Result" />
+
+        <TextView
+            android:id="@+id/fetchdata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@android:color/black"/>
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
