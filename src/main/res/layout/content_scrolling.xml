@@ -62,7 +62,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="What are their interests?"
+            android:text="What is their MAIN interest?"
             android:textAppearance="@style/TextAppearance.AppCompat"
             app:fontFamily="casual" />
 
@@ -160,15 +160,19 @@
             android:id="@+id/ResultBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:text="Result" />
+            android:background="@android:color/white"
+            android:text="Result"
+            android:textColor="@color/colorAccent" />
 
         <TextView
             android:id="@+id/fetchdata"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
             android:text="TextView"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:fontFamily="sans-serif-condensed" />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
